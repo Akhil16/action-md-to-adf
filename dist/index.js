@@ -5266,21 +5266,18 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
 const core = __nccwpck_require__(186);
-const fnTranslate = __nccwpck_require__(708)
-
+const fnTranslate = __nccwpck_require__(708);
 const convertToADF = () => {
     try {
-        const markdown = core.getInput('text');
-        const value = '' + fnTranslate(markdown)
-        core.setOutput(`_${adfOutput}`, value);
-    } catch (err) {
+        const markdown = core.getInput("md-text");
+        const value = "" + fnTranslate(markdown);
+        core.setOutput("adf-output", value);
+    }
+    catch (err) {
         core.setFailed(err.message);
     }
-}
-
-convertToADF()
-
-
+};
+convertToADF();
 
 })();
 
