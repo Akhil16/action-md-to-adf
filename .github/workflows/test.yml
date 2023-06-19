@@ -18,7 +18,10 @@ jobs:
       - uses: ./
         id: convert
         with:
-          md-text: "# DiscoveryClientWebsites   asd "
+          md-text: "# DiscoveryClientWebsites   
+          ##h2
+          
+          ### h3 "
       - run: |
           echo "app=${{ steps.convert.outputs.adf-output}}"
 
@@ -26,9 +29,10 @@ jobs:
     name: converting md-to-adf from repo
     runs-on: ubuntu-latest
     steps:
-      - uses: Akhil-TI/action-md-to-adf@v1.0.0
+      - uses: Akhil-TI/action-md-to-adf@1.0.0
         id: convert
         with:
-          md-text: "# DiscoveryClientWebsites  asdasd "
+          md-text: "# DiscoveryClientWebsites  
+          #### head 4 "
       - run: |
           echo "app=${{ steps.convert.outputs.adf-output}}"
