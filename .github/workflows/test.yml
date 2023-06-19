@@ -19,7 +19,7 @@ jobs:
         id: convert
         with:
           md-text: "# DiscoveryClientWebsites   
-          ##h2
+          ## h2
           
           ### h3 "
       - run: |
@@ -29,7 +29,7 @@ jobs:
     name: converting md-to-adf from repo
     runs-on: ubuntu-latest
     steps:
-      - uses: Akhil-TI/action-md-to-adf@1.0.0
+      - uses: Akhil-TI/action-md-to-adf@v1.0.0
         id: convert
         with:
           md-text: "# DiscoveryClientWebsites  
