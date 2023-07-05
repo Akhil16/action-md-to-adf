@@ -5268,14 +5268,9 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(186);
 const fnTranslate = __nccwpck_require__(708);
 const convertToADF = () => {
-    try {
-        const markdown = core.getInput("md-text");
-        const value = "" + fnTranslate(markdown);
-        core.setOutput("adf-output", value);
-    }
-    catch (err) {
-        core.setFailed(err.message);
-    }
+    const markdown = core.getInput("md-text");
+    const value = fnTranslate((markdown));
+    core.setOutput("adf-output", ({ body: value }));
 };
 convertToADF();
 

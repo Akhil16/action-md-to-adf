@@ -4,8 +4,8 @@ const fnTranslate = require("md-to-adf");
 const convertToADF = () => {
   try {
     const markdown = core.getInput("md-text");
-    const value = "" + fnTranslate(markdown);
-    core.setOutput("adf-output", value);
+    const value = fnTranslate((markdown));
+    core.setOutput("adf-output", ({ body: value }));
   } catch (err) {
     core.setFailed(err.message);
   }
