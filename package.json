@@ -1,23 +1,28 @@
 {
   "name": "action-md-to-adf",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "Convert Markdown to Atlassian Document Format (ADF) GitHub Action",
+  "main": "dist/index.js",
+  "author": "Akhil16",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "pack": "ncc build ./src/index.ts -o dist",
-    "all": "npm run build && npm run pack"
+    "pack": "ncc build dist/index.js -o dist --license licenses.txt",
+    "clean": "rm -rf dist",
+    "all": "npm run clean && npm run build && npm run pack",
+    "test": "jest"
   },
-  "author": "Akhil",
-  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@vercel/ncc": "^0.36.1",
     "axios": "^1.4.0",
-    "md-to-adf": "^0.6.4",
-    "typescript": "^5.1.3"
+    "md-to-adf": "^0.6.4"
   },
   "devDependencies": {
-    "@types/node": "^20.3.1"
+    "@vercel/ncc": "^0.36.1",
+    "typescript": "^5.1.3",
+    "@types/node": "^20.3.1",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.0"
   }
 }

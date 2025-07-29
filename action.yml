@@ -1,17 +1,35 @@
-name: 'Convert Markdown text Atlassian Document Format'
-description: 'Convert "md" format text to ADF(atlassian document format) using md-to-adf- lib'
-author: 'Akhilendu'
+# action.yml (root of repository)
+name: 'Convert Markdown to ADF'
+description: 'Converts Markdown → Atlassian Document Format and can post it to a Jira issue'
+author: 'Akhil16'
 branding:
-  icon: file-text
-  color: blue
+  icon: 'file-text'
+  color: 'blue'
+
 inputs:
   md-text:
-    description: "text to convert"
+    description: 'Markdown text to convert'
     required: true
-    default: ""
+  jira-base-url:
+    description: 'Jira base URL (e.g. https://example.atlassian.net)'
+    required: false
+  jira-ticket-id:
+    description: 'Jira issue key (e.g. PROJ-123)'
+    required: false
+  jira-username:
+    description: 'Jira username or e-mail'
+    required: false
+  jira-api-token:
+    description: 'Jira API token'
+    required: false
+  jira-comment:
+    description: 'Custom comment text (defaults to ADF JSON)'
+    required: false
+
 outputs:
   adf-output:
-    description: "ADF text output"
+    description: 'ADF JSON produced from the Markdown input'
+
 runs:
-  using: node16
-  main: "dist/index.js"
+  using: 'node20'
+  main: 'dist/index.js'

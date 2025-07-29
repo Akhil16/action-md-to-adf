@@ -16,8 +16,8 @@ jobs:
         id: note
         run: |
           release_info=$(curl --request GET \
-            --url https://api.github.com/repos/Akhil-TI/action-md-to-adf/releases/tags/v1.0.0 \
-            --header 'authorization: Bearer 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' \
+            --url https://api.github.com/repos/Akhil16/action-md-to-adf/releases/tags/v1.0.0 \
+            --header 'authorization: Bearer <redacted>' \
             --header 'Accept: application/vnd.github+json' \
             --header 'X-GitHub-Api-Version: 2022-11-28')
           EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
@@ -44,8 +44,8 @@ jobs:
         run: npm install
 
       - name: Comment on Jira ticket
-        run: node kira_comment.js
+        run: node jira_comment.js
         env:
-          JIRA_API_TOKEN: ATATT3xFfGF0KrgaQYro3-Bt5aZXEyXCfIhD6oWxIoKvvmB09up3jC6vTHYXVu_J87zmCTex6ZbI66ZUVkE9qV6jUmkcGShWJIMPfGO9lKbsP0B-SLM2488JyfVyfxfYQ9wIfATTaaFVARbB7MtE-2eRJZx1RZHi3XkgRUGz-C3X2h33CJLs7qc=96B2CC22
-          JIRA_TICKET_ID: JGAWT-1
+          JIRA_API_TOKEN: <redacted>
+          JIRA_TICKET_ID: <ticketid>
           COMMENT_DATA:  ${{steps.convert.outputs.adf-output}}
